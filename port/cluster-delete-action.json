@@ -15,7 +15,7 @@
   },
   "invocationMethod": {
     "type": "GITHUB",
-    "org": "vfarcic",
+    "org": "Sir-gits-a-lot",
     "repo": "idp-demo",
     "workflow": "delete-cluster.yaml",
     "omitPayload": true
