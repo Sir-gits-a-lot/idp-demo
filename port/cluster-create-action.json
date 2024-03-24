@@ -14,7 +14,8 @@
         "default": "civo",
         "description": "The provider where the cluster is hosted",
         "enum": [
-          "civo"
+          "civo",
+          "aws"
         ]
       },
       "node-size": {
@@ -27,6 +28,12 @@
           "medium",
           "large"
         ]
+      },
+      "k8s-version": {
+        "type": "string",
+        "title": "Desired K8s Version",
+        "default": "1.29",
+        "description": "The Kubernetes version required, upgrade possible but downgrade not possible for managed k8s"
       },
       "min-node-count": {
         "type": "string",
@@ -44,7 +51,7 @@
   },
   "invocationMethod": {
     "type": "GITHUB",
-    "org": "vfarcic",
+    "org": "Sir-gits-a-lot",
     "repo": "idp-demo",
     "workflow": "create-cluster.yaml",
     "omitPayload": true
