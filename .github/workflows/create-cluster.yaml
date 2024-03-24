@@ -13,6 +13,10 @@ on:
         required: true
         description: "The type of the cluster"
         default: "ck-all"
+      k8s-version:
+        required: true
+        description: "K8s version for the cluster"
+        default: "1.29"
       node-size:
         required: true
         description: "The size of the nodes"
@@ -32,7 +36,7 @@ jobs:
       - name: Create cluster
         run: |
           chmod +x scripts/create-cluster.sh
-          ./scripts/create-cluster.sh ${{ inputs.name }} ${{ inputs.provider }} ${{ inputs.cluster }} ${{ inputs.node-size }} ${{ inputs.min-node-count }}
+          ./scripts/create-cluster.sh ${{ inputs.name }} ${{ inputs.provider }} ${{ inputs.cluster }} ${{ inputs.node-size }} ${{ inputs.version }} ${{ inputs.min-node-count }}
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
