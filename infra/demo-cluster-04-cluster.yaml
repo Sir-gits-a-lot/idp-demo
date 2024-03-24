@@ -1,0 +1,15 @@
+---
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: ClusterClaim
+metadata:
+  name: demo-cluster-04
+  namespace: infra
+spec:
+  id: demo-cluster-04
+  compositionSelector:
+    matchLabels:
+      provider: civo
+      cluster: ck-all
+  parameters:
+    nodeSize: small
+    minNodeCount: 1
