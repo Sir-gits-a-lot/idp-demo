@@ -36,7 +36,7 @@ jobs:
       - name: Create cluster
         run: |
           chmod +x scripts/create-cluster.sh
-          ./scripts/create-cluster.sh ${{ inputs.name }} ${{ inputs.provider }} ${{ inputs.cluster }} ${{ inputs.node-size }} ${{ inputs.version }} ${{ inputs.min-node-count }}
+          ./scripts/create-cluster.sh ${{ inputs.name }} ${{ inputs.provider }} ${{ inputs.cluster }} ${{ inputs.node-size }} ${{ inputs.k8s-version }} ${{ inputs.min-node-count }}
       - name: Commit changes
         run: |
           git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
