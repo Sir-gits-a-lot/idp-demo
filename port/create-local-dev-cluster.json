@@ -1,0 +1,25 @@
+{
+  "identifier": "create-local-dev-cluster",
+  "title": "Create a local dev cluster",
+  "userInputs": {
+    "properties": {
+      "name": {
+        "type": "string",
+        "title": "Name",
+        "description": "The name of the cluster"
+      }
+    },
+    "required": [
+      "name"
+    ]
+  },
+  "invocationMethod": {
+    "type": "GITHUB",
+    "org": "Sir-gits-a-lot",
+    "repo": "idp-demo",
+    "workflow": "create-local-dev-cluster.yaml",
+    "omitPayload": true
+  },
+  "trigger": "CREATE",
+  "description": "Create a new cluster."
+}
