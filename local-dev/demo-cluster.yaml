@@ -1,0 +1,18 @@
+---
+apiVersion: osm.io/v1alpha1
+kind: ClusterClaim
+metadata:
+  name: demo
+  namespace: osm
+  labels:
+    cluster-owner: tataelxsi
+spec:
+  id: NAME
+  compositionSelector:
+    matchLabels:
+      provider: PROVIDER
+      cluster: CLUSTER
+  parameters:
+    nodeSize: SIZE
+    version: "1.29"
+    minNodeCount: 1
