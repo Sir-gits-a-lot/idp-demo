@@ -13,6 +13,10 @@ on:
         required: true
         description: "The type of the cluster"
         default: "ck-all"
+      region:
+        required: true
+        description: "Public Cloud Region of the cluster"
+        default: "IN"
       node-size:
         required: true
         description: "The size of the nodes"
