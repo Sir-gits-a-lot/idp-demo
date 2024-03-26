@@ -1,0 +1,20 @@
+---
+apiVersion: osm.io/v1alpha1
+kind: XCluster
+metadata:
+  name: NAME
+  namespace: osm
+  labels:
+    cluster-owner: tataelxsi
+spec:
+  id: NAME
+  compositionRef:
+    name: osm-eks
+  parameters:
+    region: REGION
+    nodeSize: SIZE
+    version: VERSION
+    minNodeCount: 1
+  writeConnectionSecretToRef:
+    namespace: crossplane-system
+    name: crossplane-cluster-connection-secret
