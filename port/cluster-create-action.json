@@ -18,6 +18,17 @@
           "aws"
         ]
       },
+      "cluster": {
+        "type": "string",
+        "title": "cluster",
+        "default": "eks",
+        "description": "Field to select the composition",
+        "enum": [
+          "eks",
+          "aks",
+          "gke"
+        ]
+      },
       "region": {
         "type": "string",
         "title": "Region",
