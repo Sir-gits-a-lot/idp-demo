@@ -1,0 +1,19 @@
+---
+apiVersion: osm.io/v1alpha1
+kind: ClusterClaim
+metadata:
+  name: osm-2
+  namespace: osm
+  labels:
+    cluster-owner: tataelxsi
+spec:
+  id: osm-2
+  compositionSelector:
+    matchLabels:
+      provider: aws
+      cluster: ck-all
+  parameters:
+    region: IN
+    nodeSize: small
+    version: "1.29"
+    minNodeCount: 1
