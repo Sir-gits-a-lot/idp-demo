@@ -18,6 +18,17 @@
           "aws"
         ]
       },
+      "region": {
+        "type": "string",
+        "title": "Region",
+        "default": "IN",
+        "description": "The public cloud region where the cluster will be created",
+        "enum": [
+          "IN",
+          "US",
+          "EU"
+        ]
+      },
       "node-size": {
         "type": "string",
         "title": "Node Size",
