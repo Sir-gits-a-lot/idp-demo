@@ -13,9 +13,7 @@ spec:
       provider: PROVIDER
       cluster: CLUSTER
   parameters:
+    region: REGION
     nodeSize: SIZE
-    version: "1.29"
+    version: VERSION
     minNodeCount: 1
-  writeConnectionSecretToRef:
-    namespace: crossplane-system
-    name: crossplane-cluster-connection-secret
