@@ -1,11 +1,10 @@
 ---
-apiVersion: osm.io/v1alpha1
+apiVersion: xcloud.io/v1alpha1
 kind: ClusterClaim
 metadata:
   name: NAME
-  namespace: osm
   labels:
-    cluster-owner: tataelxsi
+    cluster-owner: utkarsh
 spec:
   id: NAME
   compositionSelector:
