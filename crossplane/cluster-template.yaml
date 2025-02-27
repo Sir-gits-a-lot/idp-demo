@@ -1,15 +1,14 @@
 ---
-apiVersion: osm.io/v1alpha1
+apiVersion: xcloud.io/v1alpha1
 kind: XCluster
 metadata:
   name: NAME
-  namespace: osm
   labels:
-    cluster-owner: tataelxsi
+    cluster-owner: utkarsh
 spec:
   id: NAME
   compositionRef:
-    name: osm-eks
+    name: xcloud-eks
   parameters:
     region: REGION
     nodeSize: SIZE
