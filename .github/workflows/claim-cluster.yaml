@@ -1,0 +1,54 @@
+name: Create a cluster claim
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        required: true
+        description: "The name of the cluster"
+      provider:
+        required: true
+        description: "The provider where the cluster is hosted"
+        default: "civo"
+      cluster:
+        required: true
+        description: "The type of the cluster"
+        default: "ck-all"
+      region:
+        required: true
+        description: "Public Cloud Region of the cluster"
+        default: "IN"
+      node-size:
+        required: true
+        description: "The size of the nodes"
+        default: "small"
+      k8s-version:
+        required: true
+        description: "K8s version for the cluster"
+        default: "1.29"
+      min-node-count:
+        required: true
+        description: "The minnimun number of nodes (autoscaler might increase this number)"
+        default: "1"
+jobs:
+  deploy-app:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - name: Create cluster claim
+        run: |
+          chmod +x scripts/create-cluster-claim.sh
+          ./scripts/create-cluster-claim.sh ${{ inputs.name }} ${{ inputs.provider }} ${{ inputs.cluster }} ${{ inputs.region }} ${{ inputs.node-size }} ${{ inputs.k8s-version }} ${{ inputs.min-node-count }}
+      - name: Commit changes
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "Create cluster claim ${{ inputs.name }}"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
