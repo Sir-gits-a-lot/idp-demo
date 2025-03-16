@@ -6,7 +6,7 @@ NODE_SIZE=$5
 VERSION=$6
 MIN_NODE_COUNT=$7
 
-FILE_PATH=infra/${NAME}-cluster.yaml
+FILE_PATH=infra/${NAME}-cluster-claim.yaml
 
 cp crossplane/cluster-claim-template.yaml $FILE_PATH
 yq --inplace ".metadata.name = \"${NAME}\"" $FILE_PATH
